@@ -1,16 +1,30 @@
 #include <iostream>
-#include <iomanip>
+#include <algorithm>
 using namespace std;
-#define PI 3.1415926535897932384626433832795
 int main()
 {
-    int r, d;
-    float area, ans;
-    cin >> r;
-    area = 2 * PI * r;
-    d = 2 * r;
-    ans = area / d;
-    cout << fixed << setprecision(5) << ans << endl;
-
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    sort(a, a + n);
+    int count = 0;
+    for (int i = 0; i < n - 2; i++)
+    {
+        for (int j = i + 1; j < n - 1; j++)
+        {
+            for (int k = j + 1; k < n; k++)
+            {
+                if (a[i] + a[j] > a[k])
+                {
+                    count++;
+                }
+            }
+        }
+    }
+    cout << count << endl;
     return 0;
 }
