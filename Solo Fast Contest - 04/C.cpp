@@ -25,7 +25,27 @@ int main()
 
                 if (a + b > c && a + c > b && b + c > a)
                 {
-                    count++;
+                    if (a > c && a > b)
+                    {
+                        if (a * a == b * b + c * c)
+                        {
+                            count++;
+                        }
+                    }
+                    else if (c > a && c > b)
+                    {
+                        if (c * c == a * a + b * b)
+                        {
+                            count++;
+                        }
+                    }
+                    else if (b > a && b > c)
+                    {
+                        if (b * b == a * a + c * c)
+                        {
+                            count++;
+                        }
+                    }
                 }
             }
         }
